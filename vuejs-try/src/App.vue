@@ -1,7 +1,21 @@
 <template>
-  <h1>Bonjour {{ firstName.toUpperCase() }}</h1>
+  <p>Compteur : {{ count }}</p>
+  <button @click="increment">Incrémenter</button>
+  <button @click="decrement">Décrementer</button>
 </template>
 
 <script setup>
-const firstName = 'John';
+import { ref } from 'vue';
+
+const count = ref(0);
+console.log(count, count.value);
+const increment = (e) => {
+  count.value++;
+};
+
+const decrement = (e) => {
+  count.value--;
+};
 </script>
+
+<style></style>
